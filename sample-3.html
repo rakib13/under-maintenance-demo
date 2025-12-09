@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Creations Token — Under Maintenance</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #0d0d0d;
+            font-family: "Poppins", sans-serif;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px;
+            border-radius: 20px;
+            position: relative;
+            width: 90%;
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 25px rgba(0, 255, 170, 0.3);
+        }
+
+        .border-animate {
+            position: absolute;
+            inset: 0;
+            border-radius: 20px;
+            padding: 2px;
+            background: linear-gradient(120deg,
+                    #00ffaa,
+                    #00aaff,
+                    #aa00ff,
+                    #00ffaa);
+            background-size: 300% 300%;
+            animation: borderAnim 6s ease infinite;
+            z-index: -1;
+        }
+
+        @keyframes borderAnim {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px #00ffaa;
+        }
+
+        h2 {
+            font-size: 18px;
+            font-weight: 300;
+            margin-bottom: 20px;
+            color: #cccccc;
+        }
+
+        .icon {
+            font-size: 70px;
+            margin-bottom: 20px;
+            color: #00ffaa;
+            text-shadow: 0 0 15px #00ffaa;
+        }
+
+        #countdown {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: 300;
+            color: #aaaaaa;
+        }
+
+        .footer {
+            margin-top: 25px;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="border-animate"></div>
+
+        <!-- Crypto Icon -->
+        <div class="icon">⧉</div>
+
+        <h1>Carbon Creations Token</h1>
+        <h2>Our platform is currently undergoing scheduled maintenance.</h2>
+
+        <p>We’re upgrading systems to bring you a faster, more secure crypto experience.</p>
+
+        <!-- Countdown Timer -->
+        <div id="countdown">Estimated Time Remaining: <span id="timer">Loading...</span></div>
+
+        <div class="footer">© 2025 Carbon Creations Token — All Rights Reserved</div>
+    </div>
+
+    <script>
+        // Optional countdown – set target date:
+        let targetDate = new Date("2025-12-04T12:00:00Z"); // Set your target date here
+        targetDate.setHours(targetDate.getHours() + 5); // 5 hours from now
+
+        const timerEl = document.getElementById("timer");
+
+        function updateTimer() {
+            let now = new Date().getTime();
+            let distance = targetDate - now;
+
+            if (distance < 0) {
+                timerEl.innerHTML = "We’ll be back shortly.";
+                return;
+            }
+
+            let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            let datestring = "";
+            if (days > 0) {
+                datestring += days + " Days ";
+            }
+            if (hours > 0) {
+                datestring += hours + " Hours ";
+            }
+            if (minutes > 0) {
+                datestring += minutes + " Minutes ";
+            }
+            datestring += seconds + " Seconds";
+            // timerEl.innerHTML = days + " Days " + hours + " Hours " + minutes + " Minutes " + seconds + "Seconds";
+            timerEl.innerHTML = datestring;
+        }
+
+        setInterval(updateTimer, 1000);
+    </script>
+
+</body>
+
+</html>

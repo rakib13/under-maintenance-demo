@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Under Maintenance - The Future is Being Built</title>
+    <style>
+        /* Base styles for the dark theme */
+        :root {
+            --background-color: #121212;
+            --text-color: #E0E0E0;
+            --accent-color: #00FF7F; /* Bright green/neon for a tech/crypto feel */
+            --glow-color: rgba(0, 255, 127, 0.4);
+            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: var(--font-family);
+            text-align: center;
+            overflow: hidden; /* Prevent body scroll */
+        }
+
+        /* Container for content */
+        .maintenance-container {
+            max-width: 90%;
+            padding: 40px;
+            border-radius: 15px;
+            background: #1e1e1e;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Subtle lift */
+            z-index: 10;
+        }
+
+        /* Title styling */
+        .title {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+            text-shadow: 0 0 10px var(--glow-color); /* Neon glow effect */
+            letter-spacing: 2px;
+        }
+        
+        /* Subtitle/message styling */
+        .message {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: #AAAAAA;
+        }
+
+        /* Details styling */
+        .details {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        
+        /* Progress Bar Styling (Crypto concept: Blockchain/Loading Blocks) */
+        .progress-bar-container {
+            width: 80%;
+            height: 15px;
+            background-color: #333;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 20px auto;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .progress-bar {
+            width: 0%; /* Initial width */
+            height: 100%;
+            background: linear-gradient(90deg, #00FF7F, #00B359);
+            border-radius: 8px;
+            animation: loading 3s ease-in-out infinite alternate;
+            box-shadow: 0 0 10px var(--glow-color);
+        }
+
+        /* Loading animation for the progress bar */
+        @keyframes loading {
+            0% { width: 0%; }
+            100% { width: 95%; }
+        }
+
+        /* Crypto Icon/Symbol (using a wrench for maintenance and a simple block for crypto) */
+        .icon {
+            font-size: 5rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+            /* This section is for a placeholder icon - for a real site, use an SVG or FontAwesome */
+        }
+        
+        /* Background Animation - Subtle "Network" Effect */
+        .network-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.15;
+            background: radial-gradient(circle at center, #00FF7F 1px, transparent 10px),
+                        linear-gradient(90deg, #121212 1px, transparent 1px),
+                        linear-gradient(#121212 1px, transparent 1px);
+            background-size: 40px 40px;
+            animation: background-pan 30s linear infinite;
+            z-index: 1;
+        }
+
+        @keyframes background-pan {
+            from {
+                background-position: 0 0;
+            }
+            to {
+                background-position: 400px 400px; /* Moves the pattern diagonally */
+            }
+        }
+
+        /* Footer/Social Links */
+        .footer {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: white;
+            text-shadow: 0 0 5px var(--glow-color);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="network-bg"></div>
+
+    <div class="maintenance-container">
+        
+        <div class="icon">
+            <span role="img" aria-label="Wrench and Block">🔧 &#9632;</span> 
+        </div>
+
+        <h1 class="title">SYSTEM UPGRADE IN PROGRESS</h1>
+        
+        <p class="message">
+            We are currently optimizing the **blockchain infrastructure** for a faster, more secure future.
+        </p>
+
+        <div class="progress-bar-container">
+            <div class="progress-bar"></div>
+        </div>
+        
+        <p class="details">
+            **Estimated Completion:** A few hours. <br>
+            We appreciate your patience while we roll out critical updates. Your assets are secure.
+        </p>
+        
+        <div class="footer">
+            Follow our progress:
+            <a href="#" target="_blank">Twitter</a> |
+            <a href="#" target="_blank">Telegram</a> |
+            <a href="#" target="_blank">Status Page</a>
+        </div>
+
+    </div>
+
+</body>
+</html>
